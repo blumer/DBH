@@ -1,0 +1,79 @@
+<html>
+<head>
+	<title>DBH</title>
+	<style>
+		body {
+			font-family: "pt-sans", "sans-serif"
+			color: #ddd;
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.80)), color-stop(100%,rgba(0,0,0,0.2)));
+			margin: 0px;
+		}
+		a {
+			color: #888;
+			border: 1px solid #888;
+			border-radius: 4px;
+			padding: 3px;
+			margin-left: 8px;
+		}
+		a.current {
+			color: #ddd;
+			border: 1px solid #ddd;
+
+		}
+		div.header {
+			width: 100%;
+			padding: 3px;
+			-webkit-app-region: drag;
+			border-radius: 3px;
+			background-color: rgba(255,255,255,0.1);
+			display: block;
+		}
+		
+		div.views {
+			vertical-align: top;
+			display: inline-block;
+			margin-top: 8px;
+			-webkit-app-region: no-drag;
+		}
+		div#close {
+			float:right;		
+	        -webkit-app-region: no-drag;
+	        padding: 3px;
+	        color: #aaa;
+	        border: 1px solid #aaa;
+	        margin-top: 6px;
+	        margin-right: 8px;
+		}
+		div.content {
+			margin: 8px;
+		}
+		div#video-window{
+			margin: 0px;
+			padding: 0px;
+			display: inline-block;
+		}
+		div#chat-window{
+			margin: 0px;
+			padding: 0px;
+			display: inline-block;
+		}		
+	</style>
+	<script src="dbh.js"></script>
+</head>
+<body style="" >
+	<div class="header">
+		<img src="dbh_logo_300.png" style="width:50px; height:29;">
+		<div class="views">
+		<a id="sbs" class="current">Side-By-Side</a> <a id="stacked">Stacked</a> <a id="video">Video Only</a>
+		</div>
+		<div id="close">X</div>
+	</div>
+	<div class="content">
+		<div id="video-window">
+			<webview src="http://www.metacdn.com/r/l/bdorsikwq/dbh/embed" style="width: 400px; height: 300px;"></webview>
+		</div>
+		<div id="chat-window">
+			<webview src="https://kiwiirc.com/client/chat.freenode.com:6667/?nick=Jackal|?&theme=mini#dbh" style="border:0; width:400px; height:300px;" />
+		</div>
+	</div>
+</body>

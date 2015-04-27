@@ -2,7 +2,7 @@
   "name": "Dan Benjamin Hour",
   "short_name": "DBH",
   "description": "Mini-Viewer for the Dan Benjamin Hour",
-  "version": "0.3",
+  "version": "0.4",
   "manifest_version": 2,
   "app": {
     "background": {
@@ -13,7 +13,8 @@
   "permissions": [
 	"webview",
 	"http://*.metacdn.com/",
-	"https://*.kiwiirc.com/"
+	"https://*.kiwiirc.com/",
+	"alwaysOnTopWindows"
   ],
   "commands": {
 	"toggle-orientation": {

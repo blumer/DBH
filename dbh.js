@@ -5,7 +5,8 @@ document.addEventListener('DOMContentLoaded', function() {
     var stacked = document.getElementById('stacked');
     var video = document.getElementById('video');
     var chatwindow = document.getElementById('chat-window');
-    
+    var ontop = document.getElementById('ontop');
+	
     sidebyside.addEventListener('click', function() {
     	stacked.removeAttribute("class");
     	video.removeAttribute("class");
@@ -14,8 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
     	window.resizeTo(820, 350);
 
     });
-    
-    
+        
     stacked.addEventListener('click', function() {
 	    stacked.className = "current";
     	sidebyside.removeAttribute("class");
@@ -30,6 +30,16 @@ document.addEventListener('DOMContentLoaded', function() {
     	stacked.removeAttribute("class");
 		chatwindow.style.display = "none";
         window.resizeTo(420, 350);
+	});
+	
+	ontop.addEventListener('click', function() {
+		var win = chrome.app.window.current();
+		if(win.isAlwaysOnTop()) {
+			ontop.removeAttribute("class");
+		} else {
+			ontop.className = "current";	
+		}
+		win.setAlwaysOnTop(!win.isAlwaysOnTop());
 	});
 	
 	var close = document.getElementById("close");
